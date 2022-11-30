@@ -4,24 +4,27 @@ import TeacherLog from './TeacherLog.js';
 
 function LoginPage() {
     let logSheet;
-    const [val, setVal] = useState("Please log in")
-    const click = () => {
-        alert(val)
+    const [logins, setLogins] = useState({name: '', email: '',})
+    const handleSubmit = (event) => {
+        event.persist();
+        event.preventDefault();
+        setLogins((logins) => ({...logins, name: event.target.login}))
+        console.log('login', logins.name);
+
     }
-    const getValue =(entry) => {
-        setVal(entry.target.value)
-    }
-    if (val === 'student') {
+    if (logins.name === 'student') {
         logSheet = <StudentLog />
-    } else if (val === 'teacher') {
+    } else if (logins.name === 'teacher') {
         logSheet = <TeacherLog />
     } else {
         logSheet = 'Please sign in'
     }
     return (
     <div>
-        <input type="text" value={val} onChange={getValue} />
-        <button onClick={click}>Login</button>
+        <form onSubmit={handleSubmit}>
+        <input id="name" name="name" type="text" placeholder="Name" value={logins.name} onChange={handleSubmit} />
+        <button type="submit">Login</button>
+        </form>
         <div>{logSheet}</div>
 
     </div>
