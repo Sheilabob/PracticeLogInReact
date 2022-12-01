@@ -4,17 +4,30 @@ import TeacherLog from './TeacherLog.js';
 
 function LoginPage() {
     let logSheet;
-    const [logins, setLogins] = useState({name: '', email: '',})
-    const handleSubmit = (event) => {
-        event.persist();
-        event.preventDefault();
-        setLogins((logins) => ({...logins, name: event.target.login}))
-        console.log('login', logins.name);
+    const [values, setValues] = useState({name: ''})
+    const [pages, setPages] = useState(false)
 
+    const handleNameInputChange = (event) => {
+        event.persist();
+        setValues((values) => ({
+            ...values,
+            name: event.target.value,
+        }));
+    };
+
+    const resetToggle = () => {
+        setPages(false)
     }
-    if (logins.name === 'student') {
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        setPages(!pages)
+        console.log('login', values.name);
+        console.log('pages', pages)
+    }
+    if (values.name === 'student' && pages) {
         logSheet = <StudentLog />
-    } else if (logins.name === 'teacher') {
+    } else if (values.name === 'teacher' && pages) {
         logSheet = <TeacherLog />
     } else {
         logSheet = 'Please sign in'
@@ -22,8 +35,8 @@ function LoginPage() {
     return (
     <div>
         <form onSubmit={handleSubmit}>
-        <input id="name" name="name" type="text" placeholder="Name" value={logins.name} onChange={handleSubmit} />
-        <button type="submit">Login</button>
+        <input id="name" name="name" type="text" placeholder="Name" value={values.name} onChange={handleNameInputChange} />
+        <button type="submit" onSubmit={handleSubmit}>Login</button>
         </form>
         <div>{logSheet}</div>
 
