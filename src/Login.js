@@ -30,14 +30,14 @@ function LoginPage() {
     } else if (values.name === 'teacher' && pages) {
         logSheet = <TeacherLog />
     } else {
-        logSheet = 'Please sign in'
-    }
-    return (
-    <div>
-        <form onSubmit={handleSubmit}>
+        logSheet =<form onSubmit={handleSubmit}>
         <input id="name" name="name" type="text" placeholder="Name" value={values.name} onChange={handleNameInputChange} />
         <button type="submit" onSubmit={handleSubmit}>Login</button>
         </form>
+    }
+    return (
+    <div>
+
         <div>{logSheet}</div>
 
     </div>
