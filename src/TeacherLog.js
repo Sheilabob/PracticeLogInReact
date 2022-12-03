@@ -1,6 +1,6 @@
 function TeacherLog() {
     return (
-      <div className="studentlog" class="card">
+      <div className="teacherlog card">
         This is the Teacher log page
       </div>
     );
