@@ -19,6 +19,13 @@ function LoginPage() {
         setPages(false)
     }
 
+    const handleLogout = (event) => {
+        event.preventDefault();
+
+        setPages(!pages)
+        console.log({pages})
+    }
+
     const handleSubmit = (event) => {
         event.preventDefault();
         setPages(!pages)
@@ -26,10 +33,15 @@ function LoginPage() {
         console.log('pages', pages)
     }
     if (values.name === 'student' && pages) {
-        logSheet = <StudentLog />
+        logSheet = <><form onSubmit={handleSubmit}><button type="submit" onSubmit={handleLogout}>Logout</button></form>
+        <StudentLog /></>
     } else if (values.name === 'teacher' && pages) {
-        logSheet = <TeacherLog />
-    } else {
+        logSheet = <><form onSubmit={handleSubmit}><button type="submit" onSubmit={handleLogout}>Logout</button></form>
+        <TeacherLog /></>
+    }else if (pages) {
+        logSheet =<><div>Not a valid Login</div><form onSubmit={handleSubmit}><button type="submit" onSubmit={handleLogout}>Try Again</button></form></>
+        
+     } else {
         logSheet =<form onSubmit={handleSubmit}>
         <input id="name" name="name" type="text" placeholder="Name" value={values.name} onChange={handleNameInputChange} />
         <button type="submit" onSubmit={handleSubmit}>Login</button>

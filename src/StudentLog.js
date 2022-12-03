@@ -1,6 +1,6 @@
 function StudentLog() {
     return (
-      <div className="studentlog" class="card">
+      <div className="studentlog card">
         This is the student log page
       </div>
     );
