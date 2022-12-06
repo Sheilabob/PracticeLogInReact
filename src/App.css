@@ -3,7 +3,8 @@
   background-image: url("./images/background.jpg");
   background-position: center;
   background-size: cover;
-  height: 100vh
+  height: 100vh;
+  padding-top: 100px
 }
 
 .App-logo {
@@ -51,6 +52,10 @@
   margin: 20px auto;
 }
 
+.login {
+  min-height: 300px;
+  padding: 100px 0;
+}
 .assignment {
   border: 1px solid #464433;
   border-radius: 8px;

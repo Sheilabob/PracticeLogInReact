@@ -81,9 +81,7 @@ function LoginPage() {
   }
 
   return (
-    <div>
-      <div>{logSheet}</div>
-    </div>
+      <div className="card login">{logSheet}</div>
   );
 }
 
