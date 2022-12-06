@@ -50,3 +50,15 @@
   background-color: #fcf1e3;
   margin: 20px auto;
 }
+
+.assignment {
+  border: 1px solid #464433;
+  border-radius: 8px;
+  margin: 5px;
+  padding: 10px;
+  text-align: left;
+}
+
+ul {
+  list-style-type: none;
+}
