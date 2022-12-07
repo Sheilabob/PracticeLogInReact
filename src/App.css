@@ -68,3 +68,53 @@
 ul {
   list-style-type: none;
 }
+
+.Tabs {
+  width: 80%;
+  height: auto;
+  min-height: 400px;
+  background: #053742;
+  margin: auto;
+  border-radius: 8px;
+  padding-top: 10px;
+}
+
+ul.nav {
+  width: 60%;
+  margin: 0 auto 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #39A2DB;
+  border-radius: 4px;
+  padding-left: 0px;
+}
+
+ul.nav li {
+  width: 50%;
+  padding: 4px;
+  list-style: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.7s;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+}
+
+ul.nav li:nth-child(2) {
+  border-radius: 0;
+  border-bottom-right-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+ul.nav li:hover {
+  background: rgba(50, 224, 196, 0.15);
+}
+ul.nav li.active {
+  background: #39A2DB;
+}
+
+.FirstTab p,
+.SecondTab p {
+  font-size: 2rem;
+  text-align: center;
+}
