@@ -1,19 +1,7 @@
-import { useEffect, useState } from "react";
+import Carousel from "./Components/CarouselComponent/Carousel";
 
 function StudentLog() {
-  const data = ["1", "2", "3", "4", "5"]
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const carouselInfiniteScroll = () => {
-    if (currentIndex === data.length-1) {
-      return setCurrentIndex(0)
-    }
-    return setCurrentIndex(currentIndex+1)
-  }
 
-  useEffect(()=> {
-    const interval = setInterval(()=> {carouselInfiniteScroll()}, 3000)
-    return()=> clearInterval(interval)
-  })
     return (
       <div className="studentlog card">
         Student Name
@@ -52,12 +40,7 @@ function StudentLog() {
             <p>Put in radio box for repetition or minutes</p>
           </li>
         </ul>
-        <div className="carousel-container">
-          { data.map((item, index)=> {
-            return <h1 className="carousel-item" style={{transform: `translate(-${currentIndex * 100}%)`}}
-            key={index}>{item}</h1>
-          })}
-        </div>
+        <Carousel />
       </div>
     );
   }
