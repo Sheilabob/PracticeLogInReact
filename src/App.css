@@ -74,31 +74,39 @@ ul {
   height: auto;
   min-height: 400px;
   background: #ffffff;
-  border-radius: 8px;
+  border-radius: 4px;
+  box-shadow: 10px 5px 5px #edddc7;
+  border: 1px solid #c4aa85;
+
+
 }
 
 ul.nav {
   width: 99%;
   margin: 0;
+  margin-left: auto;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border: 1px solid #39A2DB;
+  margin-right: none;
   border-radius: 5px;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
-
   padding: 0px;
 }
 
 ul.nav li {
   width: 50%;
   padding: 4px;
+  padding-right: none;
   list-style: none;
   text-align: center;
   cursor: pointer;
   transition: all 0.7s;
   border-top-left-radius: 4px;
+  background-color: #fcf1e3;
+  border-bottom: 1px solid #c4aa85;
+  border-left: 1px solid #c4aa85;
+
+
 }
 
 ul.nav li:nth-child(2) {
@@ -110,7 +118,8 @@ ul.nav li:hover {
   background: rgba(50, 224, 196, 0.15);
 }
 ul.nav li.active {
-  background: #39A2DB;
+  background: #ffffff;
+  border: none;
 }
 
 .FirstTab p,
