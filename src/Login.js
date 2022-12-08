@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Header from "./Components/Header.js";
 import StudentLog from "./StudentLog.js";
 import TeacherLog from "./TeacherLog.js";
 
@@ -81,7 +82,10 @@ function LoginPage() {
   }
 
   return (
+    <>
+    <Header />
       <div className="card login">{logSheet}</div>
+      </>
   );
 }
 
