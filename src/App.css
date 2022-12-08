@@ -73,21 +73,22 @@ ul {
   width: 80%;
   height: auto;
   min-height: 400px;
-  background: #053742;
-  margin: auto;
+  background: #ffffff;
   border-radius: 8px;
-  padding-top: 10px;
 }
 
 ul.nav {
-  width: 60%;
-  margin: 0 auto 8px;
+  width: 99%;
+  margin: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border: 1px solid #39A2DB;
-  border-radius: 4px;
-  padding-left: 0px;
+  border-radius: 5px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+
+  padding: 0px;
 }
 
 ul.nav li {
@@ -97,14 +98,13 @@ ul.nav li {
   text-align: center;
   cursor: pointer;
   transition: all 0.7s;
-  border-bottom-left-radius: 8px;
-  border-top-left-radius: 8px;
+  border-top-left-radius: 4px;
 }
 
 ul.nav li:nth-child(2) {
   border-radius: 0;
-  border-bottom-right-radius: 2rem;
-  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 4px;
 }
 ul.nav li:hover {
   background: rgba(50, 224, 196, 0.15);
