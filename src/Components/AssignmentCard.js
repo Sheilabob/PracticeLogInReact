@@ -1,9 +1,20 @@
 function AssignmentCard() {
+
+    class Assignment {
+        constructor (category, title, description, notes) {
+            this.category = category;
+            this.title = title;
+            this.description = description;
+            this.notes = notes;
+        }
+    }
+    const demoAssignment = new Assignment("Dummy Category", "Assignment Title", "Description", "Notes")
     return (
         <div className="card">
-            <h1>Assignment Title</h1>
-            <p>Description</p>
-            <p>Notes</p>
+            <h3>{demoAssignment.category}</h3>
+            <h1>{demoAssignment.title}</h1>
+            <p>{demoAssignment.description}</p>
+            <p>{demoAssignment.notes}</p>
             <label>Monday</label>
             <input type="checkbox"  />
             <label>Tuesday</label>

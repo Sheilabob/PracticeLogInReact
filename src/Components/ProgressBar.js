@@ -2,7 +2,7 @@ function ProgressBar() {
     let completed = 30;
 let progressWidth = {
     width: `${completed}%`}
-pbfill.onClick
+// pbfill.onClick
 const addToProgress = (e) => {
     e.preventDefault();
     console.log('clicked')
