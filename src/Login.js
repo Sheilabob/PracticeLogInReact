@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "./Components/Header.js";
 import StudentLog from "./StudentLog.js";
 import TeacherLog from "./TeacherLog.js";
+import AssignmentCard from "./Components/AssignmentCard.js";
 
 function LoginPage() {
   let logSheet;
@@ -84,7 +85,9 @@ function LoginPage() {
   return (
     <>
     <Header />
-      <div className="card login">{logSheet}</div>
+      <div className="card login">{logSheet}
+      <AssignmentCard /></div>
+      
       </>
   );
 }
