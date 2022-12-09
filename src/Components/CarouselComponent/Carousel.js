@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+
 function Carousel() {
   let div1 = <div className="Assignment"><h3>Ear Training</h3>
   <p>Listen to songs up through Cuckoo</p>
@@ -24,23 +25,42 @@ function Carousel() {
 
 
   const data = [div1, div2, div3, div4, div5]
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const carouselInfiniteScroll = () => {
-    if (currentIndex === data.length-1) {
-      return setCurrentIndex(0)
-    }
-    return setCurrentIndex(currentIndex+1)
-  }
+  // const [currentIndex, setCurrentIndex] = useState(0)
+  // const carouselInfiniteScroll = () => {
+  //   if (currentIndex === data.length-1) {
+  //     return setCurrentIndex(0)
+  //   }
+  //   return setCurrentIndex(currentIndex+1)
+  // }
 
-  useEffect(()=> {
-    const interval = setInterval(()=> {carouselInfiniteScroll()}, 3000)
-    return()=> clearInterval(interval)
-  })
-return (
-          <div className="carousel-container">
+  // useEffect(()=> {
+  //   const interval = setInterval(()=> {carouselInfiniteScroll()}, 3000)
+  //   return()=> clearInterval(interval)
+  // })
+  const [current, setCurrent] = useState(0);
+  const length = data.length;
+
+  const nextSlide = () => {
+    setCurrent(current === length - 1 ? 0 : current + 1);
+  };
+
+  const prevSlide = () => {
+    setCurrent(current === 0 ? length - 1 : current - 1);}
+
+    return (
+      <div className="styled-slider">
+          
+            <div
+        className="left-arrow"
+        onClick={prevSlide}
+      >left</div>
+      <div
+        className="right-arrow"
+        onClick={nextSlide}
+      >right</div>
           { data.map((item, index)=> {
-            return <h1 className="carousel-item" style={{transform: `translate(-${currentIndex * 100}%)`}}
-            key={index}>{item}</h1>
+            return <div className="slide-image" 
+            key={index}>{index === current && (item)}</div>
           })}
         </div>)
 };

@@ -136,22 +136,49 @@ ul.nav li:hover {
   text-align: center;
 }
 
-.carousel-container {
+/* .carousel-container {
   background: #f1f1f1;
   display: flex;
   flex-wrap: nowrap;
   overflow: hidden;
-}
+} */
 
-.carousel-item {
+/* .carousel-item {
   height: 200px;
   min-width: 90%;
-  width: 90%;
+  width: 400;
+  height: 300;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: 1s cubic-bezier(0.39, 0.575, 0.565, 1);
   font-size: 16px;
+} */
+
+.styled-slider {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slide-image {
+  width: 400;
+  height: 300px;
+  object-fit: cover;
+}
+
+.rightArrow {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  font-size: 2rem;
+}
+
+.leftArrow {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  font-size: 2rem;
 }
 
 .pb-border {
