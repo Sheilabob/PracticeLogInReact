@@ -3,6 +3,7 @@ import Header from "./Components/Header.js";
 import StudentLog from "./StudentLog.js";
 import TeacherLog from "./TeacherLog.js";
 import AssignmentCard from "./Components/AssignmentCard.js";
+import ProgressBar from "./Components/ProgressBar.js";
 
 function LoginPage() {
   let logSheet;
@@ -86,7 +87,8 @@ function LoginPage() {
     <>
     <Header />
       <div className="card login">{logSheet}
-      <AssignmentCard /></div>
+      <AssignmentCard />
+      <ProgressBar /></div>
       
       </>
   );

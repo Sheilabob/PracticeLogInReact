@@ -6,7 +6,19 @@ function AssignmentCard() {
             <p>Notes</p>
             <label>Monday</label>
             <input type="checkbox"  />
-            <span class="checkmark"></span>
+            <label>Tuesday</label>
+            <input type="checkbox"  />
+            <label>Wednesday</label>
+            <input type="checkbox"  />
+            <label>Thursday</label>
+            <input type="checkbox"  />
+            <label>Friday</label>
+            <input type="checkbox"  />
+            <label>Saturday</label>
+            <input type="checkbox"  />
+            <label>Sunday</label>
+            <input type="checkbox"  />
+
         </div>
     )
 };
