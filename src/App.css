@@ -156,15 +156,17 @@ ul.nav li:hover {
 } */
 
 .styled-slider {
+  width: 400;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid black;
+
 }
 .slide-image {
   width: 400;
   height: 300px;
-  object-fit: cover;
 }
 
 .arrow {
