@@ -51,17 +51,19 @@ function Carousel() {
       <div className="styled-slider">
           
             <div
-        className="left-arrow"
+        className="arrow left-arrow"
         onClick={prevSlide}
-      >left</div>
-      <div
-        className="right-arrow"
-        onClick={nextSlide}
-      >right</div>
+      >&larr;</div>
+      
           { data.map((item, index)=> {
             return <div className="slide-image" 
             key={index}>{index === current && (item)}</div>
           })}
+
+<div
+        className="arrow right-arrow"
+        onClick={nextSlide}
+      >&rarr;</div>
         </div>)
 };
 

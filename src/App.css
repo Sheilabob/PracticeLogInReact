@@ -167,18 +167,18 @@ ul.nav li:hover {
   object-fit: cover;
 }
 
-.rightArrow {
+.arrow {
   position: absolute;
-  top: 50%;
+  top: 35%;
+  font-size: 60px;
+
+}
+.right-arrow{
   right: 20px;
-  font-size: 2rem;
 }
 
-.leftArrow {
-  position: absolute;
-  top: 50%;
+.left-arrow{
   left: 20px;
-  font-size: 2rem;
 }
 
 .pb-border {
