@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import AssignmentCard from "../AssignmentCard";
 
 function Carousel() {
   let div1 = <div className="Assignment"><h3>Ear Training</h3>
@@ -22,9 +22,10 @@ function Carousel() {
   <p>Cuckoo</p>
   <p>Notes: Starts on G in RH with finger 5 - play as far as you can sound out</p>
   <p>Put in radio box for repetition or minutes</p></div>
+  let div6 = <AssignmentCard />
 
 
-  const data = [div1, div2, div3, div4, div5]
+  const data = [div1, div2, div3, div4, div5, div6]
   // const [currentIndex, setCurrentIndex] = useState(0)
   // const carouselInfiniteScroll = () => {
   //   if (currentIndex === data.length-1) {

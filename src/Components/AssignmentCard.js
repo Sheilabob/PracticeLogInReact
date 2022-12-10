@@ -10,7 +10,7 @@ function AssignmentCard() {
     }
     const demoAssignment = new Assignment("Dummy Category", "Assignment Title", "Description", "Notes")
     return (
-        <div className="card">
+        <div className="card assignment-card">
             <h3>{demoAssignment.category}</h3>
             <h1>{demoAssignment.title}</h1>
             <p>{demoAssignment.description}</p>
