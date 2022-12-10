@@ -1,8 +1,29 @@
+import { useEffect } from 'react';
+
 function ProgressBar() {
     let completed = 30;
 let progressWidth = {
     width: `${completed}%`}
 // pbfill.onClick
+useEffect(() => {
+    const width = getComputedStyle(document.documentElement).getPropertyValue('--width-progress-bar');
+    console.log(`--width-progress-bar: ${width}`)
+}, [])
+
+function setWidth(width) {
+    const oldWidth = getComputedStyle(document.documentElement).getPropertyValue('--width-progress-bar').replace('%', '')
+    console.log({oldWidth})
+    let newWidth = parseInt(oldWidth);
+    console.log(typeof newWidth, newWidth)
+    if (newWidth === 100) {
+        newWidth = 0;
+    } else {
+    newWidth = newWidth + 25;
+    }
+    document.documentElement.style.setProperty('--width-progress-bar', `${newWidth}%`);
+}
+
+
 const addToProgress = (e) => {
     e.preventDefault();
     console.log('clicked')
@@ -11,9 +32,9 @@ const addToProgress = (e) => {
 return (
     <>
     <div className="pb-border">
-        <div className="pb-fill" id="pbfill" style={progressWidth} onClick={addToProgress}></div>
+        <div className="pb-fill" id="pbfill" onClick={addToProgress}></div>
     </div>
-    <button onClick={addToProgress}>Click for progress</button>
+    <button onClick={() => setWidth('50%')}>Click for progress</button>
     </>
 )
 

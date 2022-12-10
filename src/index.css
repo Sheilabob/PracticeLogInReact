@@ -1,3 +1,7 @@
+:root {
+  --width-progress-bar: 25%;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
