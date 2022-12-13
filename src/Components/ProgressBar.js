@@ -12,9 +12,7 @@ useEffect(() => {
 
 function setWidth(width) {
     const oldWidth = getComputedStyle(document.documentElement).getPropertyValue('--width-progress-bar').replace('%', '')
-    console.log({oldWidth})
     let newWidth = parseInt(oldWidth);
-    console.log(typeof newWidth, newWidth)
     if (newWidth === 100) {
         newWidth = 0;
     } else {
@@ -22,7 +20,6 @@ function setWidth(width) {
     }
     document.documentElement.style.setProperty('--width-progress-bar', `${newWidth}%`);
 }
-
 
 const addToProgress = (e) => {
     e.preventDefault();
