@@ -29,7 +29,7 @@ function TeacherLog() {
         </div>
         <form>
           <h2>Individual Student Management</h2>
-          <label for="students">Select Student</label>
+          <label htmlFor="students">Select Student</label>
           <select id="students" name="students">
             <option value="Grace">Grace</option>
             <option value="Alice">Alice</option>
@@ -40,7 +40,7 @@ function TeacherLog() {
         <div>
           <form>
             <h2>Add Assignment</h2>
-            <label for="title">Title</label>
+            <label htmlFor="title">Title</label>
             <input type="text" id="title" onChange={handleInputChange} value={values.title}/>
             {/* <label for="description">Description</label>
             <input type="text" id="description" value={values.description}/>
