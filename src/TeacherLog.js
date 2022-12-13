@@ -18,6 +18,18 @@ function TeacherLog() {
             <option value="Liam">Liam</option>
           </select>
         </form>
+        <div>
+          <form>
+            <h2>Add Assignment</h2>
+            <label>Title</label>
+            <input type="text" />
+            <label>Description</label>
+            <input type="text" />
+            <label>Notes</label>
+            <input type="text" />
+            <button type="submit">Add New Assignment</button>
+          </form>
+        </div>
       </div>
     );
   }
