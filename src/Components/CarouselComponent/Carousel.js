@@ -2,26 +2,36 @@ import { useEffect, useState } from "react";
 import AssignmentCard from "../AssignmentCard";
 
 function Carousel() {
-  let div1 = <div className="Assignment"><h3>Ear Training</h3>
-  <p>Listen to songs up through Cuckoo</p>
-  <p>Notes:</p>
-  <p>Put in radio box for repetition or minutes</p></div>
-  let div2 = <div className="Assignment"><h3>Sight Reading</h3>
-  <p>The Pony Song, p. 24</p>
-  <p>Notes: Pay attention to quarter rests.</p>
-  <p>Put in radio box for repetition or minutes</p></div>
-  let div3 = <div className="Assignment"><h3>Main Practice Piece</h3>
-  <p>Honeybee, RH and then LH, separately</p>
-  <p>Notes: Pay attention to quarter rests.</p>
-  <p>Put in radio box for repetition or minutes</p></div>
-  let div4 = <div className="Assignment"><h3>Review</h3>
-  <p>Mississippi Hop Frog, Ice Cream Cone, Run Pony, Twinkle</p>
-  <p>Notes: Pick one per hand per day, rotate through all at least once a week.</p>
-  <p>Put in radio box for repetition or minutes</p></div>
-  let div5 = <div className="Assignment"><h3>Preview</h3>
-  <p>Cuckoo</p>
-  <p>Notes: Starts on G in RH with finger 5 - play as far as you can sound out</p>
-  <p>Put in radio box for repetition or minutes</p></div>
+  let div1 = {
+    title: "Ear Training",
+    description: "Listen to songs up through Cuckoo",
+    notes: "Notes: ",
+    other: "Put in radio button"
+  }
+  let div2 = {
+    title: "Sight Reading",
+    description: "The Pony Song, p. 24",
+    notes: "Notes: Pay attention to quarter rests.",
+    other: "Put in radio button"
+  }
+  let div3 = {
+    title: "Main Practice Piece",
+    description: "Honeybee, RH and then LH, separately",
+    notes: "Notes: Pay attention to quarter rests.",
+    other: "Put in radio box for repetition or minutes"
+  }
+  let div4 = {
+    title: "Review",
+    description: "Mississippi Hop Frog, Ice Cream Cone, Run Pony, Twinkle",
+    notes: "Notes: Pick one per hand per day, rotate through all at least once a week.",
+    other: "Put in radio box for repetition or minutes"
+  }
+  let div5 = {
+    title: "Preview",
+    description: "Cuckoo",
+    notes: "Notes: Starts on G in RH with finger 5 - play as far as you can sound out",
+    other: "Put in radio box for repetition or minutes"
+  }
   let div6 = <AssignmentCard />
 
 
@@ -58,7 +68,14 @@ function Carousel() {
       
           { data.map((item, index)=> {
             return <div className="slide-image" 
-            key={index}>{index === current && (item)}</div>
+            key={index}>
+              <div className="Assignment">
+                <h3>{index === current && (item.title)}</h3>
+                <p>{index === current && (item.description)}</p>
+                <p>{index === current && (item.notes)}</p>
+                <p>{index === current && (item.other)}</p>
+              </div>
+            </div>
           })}
 
 <div
