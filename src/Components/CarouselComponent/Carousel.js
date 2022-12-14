@@ -32,10 +32,10 @@ function Carousel() {
     notes: "Notes: Starts on G in RH with finger 5 - play as far as you can sound out",
     other: "Put in radio box for repetition or minutes"
   }
-  let div6 = <AssignmentCard />
+  // let div6 = <AssignmentCard />
 
 
-  const data = [div1, div2, div3, div4, div5, div6]
+  const data = [div1, div2, div3, div4, div5]
   // const [currentIndex, setCurrentIndex] = useState(0)
   // const carouselInfiniteScroll = () => {
   //   if (currentIndex === data.length-1) {
