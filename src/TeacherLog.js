@@ -2,22 +2,20 @@ import { useState } from "react";
 import Tabs from "./Components/TabComponent/Tabs";
 
 
-
 function TeacherLog() {
-  const [values, setValues] = useState({ title: "" });
+  const [values, setValues] = useState({ title: "", description: "" });
 
   const handleInputChange = (event) => {
     event.persist();
     setValues((values) => ({
       ...values,
-      title: event.target.value,
-
+      [event.target.name]: event.target.value
     }));
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("title", values.title);
+    console.log("title", values.title, "description", values.description);
   };
 
     return (
@@ -42,9 +40,9 @@ function TeacherLog() {
             <h2>Add Assignment</h2>
             <label htmlFor="title">Title</label>
             <input type="text" id="title" onChange={handleInputChange} value={values.title}/>
-            {/* <label for="description">Description</label>
-            <input type="text" id="description" value={values.description}/>
-            <label for="notes">Notes</label>
+            <label htmlFor="description">Description</label>
+            <input type="text" id="description" onChange={handleInputChange} value={values.description}/>
+            {/* <label for="notes">Notes</label>
             <input type="text" id="notes" value={values.notes}/> */}
             <button type="submit" onClick={handleSubmit}>Add New Assignment</button>
           </form>
