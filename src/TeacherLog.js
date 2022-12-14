@@ -6,11 +6,10 @@ function TeacherLog() {
   const [values, setValues] = useState({ title: "", description: "" });
 
   const handleInputChange = (event) => {
-    event.persist();
-    setValues((values) => ({
+    setValues({
       ...values,
       [event.target.name]: event.target.value
-    }));
+    });
   };
 
   const handleSubmit = (event) => {
@@ -39,9 +38,9 @@ function TeacherLog() {
           <form>
             <h2>Add Assignment</h2>
             <label htmlFor="title">Title</label>
-            <input type="text" id="title" onChange={handleInputChange} value={values.title}/>
+            <input type="text" id="title" onChange={handleInputChange} name="title"/>
             <label htmlFor="description">Description</label>
-            <input type="text" id="description" onChange={handleInputChange} value={values.description}/>
+            <input type="text" id="description" onChange={handleInputChange} name="description"/>
             {/* <label for="notes">Notes</label>
             <input type="text" id="notes" value={values.notes}/> */}
             <button type="submit" onClick={handleSubmit}>Add New Assignment</button>
