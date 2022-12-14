@@ -3,7 +3,7 @@ import Tabs from "./Components/TabComponent/Tabs";
 
 
 function TeacherLog() {
-  const [values, setValues] = useState({ title: "", description: "" });
+  const [values, setValues] = useState({ title: "", description: "", notes: "" });
 
   const handleInputChange = (event) => {
     setValues({
@@ -14,7 +14,7 @@ function TeacherLog() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("title", values.title, "description", values.description);
+    console.log("title", values.title, "description", values.description, "notes", values.notes);
   };
 
     return (
@@ -41,8 +41,8 @@ function TeacherLog() {
             <input type="text" id="title" onChange={handleInputChange} name="title"/>
             <label htmlFor="description">Description</label>
             <input type="text" id="description" onChange={handleInputChange} name="description"/>
-            {/* <label for="notes">Notes</label>
-            <input type="text" id="notes" value={values.notes}/> */}
+            <label for="notes">Notes</label>
+            <input type="text" id="notes" onChange={handleInputChange} name="notes"/>
             <button type="submit" onClick={handleSubmit}>Add New Assignment</button>
           </form>
         </div>
