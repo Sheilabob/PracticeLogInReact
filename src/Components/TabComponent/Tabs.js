@@ -5,6 +5,8 @@ import SecondTab from "../AllTabs/SecondTab";
 
 
 const Tabs = () => {
+
+    let students = ['One', 'Two', 'Three']
     const handleTab1 = () => {
         // update the state to tab1
         setActiveTab("tab1");
@@ -22,7 +24,7 @@ const Tabs = () => {
         <li className={activeTab === "tab2" ? "active" : ""} onClick={handleTab2}>Individual Student Management</li>
       </ul>
       <div className="outlet">
-        {activeTab === "tab1" ? <FirstTab /> : <SecondTab />}
+        {activeTab === "tab1" ? <FirstTab students={students} /> : <SecondTab />}
       </div>
     </div>
   );
