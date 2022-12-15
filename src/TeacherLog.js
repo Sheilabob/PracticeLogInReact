@@ -5,6 +5,8 @@ import Tabs from "./Components/TabComponent/Tabs";
 function TeacherLog() {
   const [values, setValues] = useState({ title: "", description: "", notes: "" });
 
+  const [arrayOfAssignments, setArray] = useState([])
+
   const handleInputChange = (event) => {
     setValues({
       ...values,
@@ -14,7 +16,11 @@ function TeacherLog() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    let newAssignment = {title: values.title, description: values.description, notes: values.notes}
     console.log("title", values.title, "description", values.description, "notes", values.notes);
+    arrayOfAssignments.push(newAssignment)
+    setArray([...arrayOfAssignments])
+    console.log({arrayOfAssignments})
   };
 
     return (
