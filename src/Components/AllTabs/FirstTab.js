@@ -3,7 +3,7 @@ import React from "react";
 const FirstTab = ({students}) => {
 
     const studentList = students.map(
-        student => <h2>{student}</h2>
+        student => <h2>{student.name}</h2>
     )
 
   return (
