@@ -8,7 +8,9 @@ function AssignmentCard() {
             this.notes = notes;
         }
     }
+
     const demoAssignment = new Assignment("Dummy Category", "Assignment Title", "Description", "Notes")
+
     return (
         <div className="card assignment-card">
             <h3>{demoAssignment.category}</h3>
@@ -29,7 +31,6 @@ function AssignmentCard() {
             <input type="checkbox"  />
             <label>Sunday</label>
             <input type="checkbox"  />
-
         </div>
     )
 };
