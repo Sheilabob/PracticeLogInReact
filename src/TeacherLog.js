@@ -3,12 +3,12 @@ import Tabs from "./Components/TabComponent/Tabs";
 
 
 function TeacherLog() {
-
+  let students = ['One', 'Two', 'Three']
 
     return (
       <div className="teacherlog card">
         <h1>Teacher Assigment Page</h1>
-        <Tabs />
+        <Tabs students={students}/>
         <div className="card">
           <h2>Full Report</h2>
         </div>

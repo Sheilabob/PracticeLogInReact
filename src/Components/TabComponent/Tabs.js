@@ -4,9 +4,8 @@ import SecondTab from "../AllTabs/SecondTab";
 
 
 
-const Tabs = () => {
+const Tabs = ({students}) => {
 
-    let students = ['One', 'Two', 'Three']
     const handleTab1 = () => {
         // update the state to tab1
         setActiveTab("tab1");
