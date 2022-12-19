@@ -3,7 +3,7 @@ import Tabs from "./Components/TabComponent/Tabs";
 
 
 function TeacherLog() {
-  let students = [{name:'Alice'}, {name:'Ella'}, {name:'Liam'}, {name:'Zinn'}]
+  let students = [{name:'Alice', arrayOfAssignments: []}, {name:'Ella', arrayOfAssignments: []}, {name:'Liam', arrayOfAssignments: []}, {name:'Zinn', arrayOfAssignments: []}]
 
     return (
       <div className="teacherlog card">

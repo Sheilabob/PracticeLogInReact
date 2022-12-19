@@ -18,6 +18,10 @@ const IndivStudents = ({students}) => {
       });
     };
   
+    const handleSelectStudent = (event) => {
+        let selectedStudent = event.target.value
+        console.log({selectedStudent})
+    }
     const handleSubmit = (event) => {
       event.preventDefault();
       let newAssignment = {title: values.title, description: values.description, notes: values.notes}
@@ -32,7 +36,7 @@ const IndivStudents = ({students}) => {
             <form>
                 <h2>Individual Student Management</h2>
                 <label htmlFor="students">Select Student</label>
-                <select id="students" name="students">
+                <select id="students" name="students" onChange={handleSelectStudent}>
                     {studentList}
                 </select>
             </form>
