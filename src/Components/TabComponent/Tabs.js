@@ -23,7 +23,7 @@ const Tabs = ({students}) => {
         <li className={activeTab === "tab2" ? "active" : ""} onClick={handleTab2}>Individual Student Management</li>
       </ul>
       <div className="outlet">
-        {activeTab === "tab1" ? <FirstTab students={students} /> : <SecondTab />}
+        {activeTab === "tab1" ? <FirstTab students={students} /> : <SecondTab students={students}/>}
       </div>
     </div>
   );

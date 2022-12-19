@@ -1,12 +1,12 @@
 import React from "react";
 import IndivStudents from "../TeacherPages/IndivStudents";
 
-const SecondTab = () => {
+const SecondTab = ({students}) => {
   return (
     <div className="SecondTab">
       <p>Individual Student Management</p>
       {/* Second  tab content will go here */}
-      <IndivStudents />
+      <IndivStudents students={students}/>
     </div>
   );
 };

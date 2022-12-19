@@ -1,12 +1,16 @@
 import { useState } from "react";
 
-const IndivStudents = () => {
+const IndivStudents = ({students}) => {
     const [values, setValues] = useState(
         { title: "", description: "", notes: "" }
     );
 
     const [arrayOfAssignments, setArray] = useState([])
   
+    const studentList = students.map(
+        student => <option value={student.name}>{student.name}</option>
+    )
+
     const handleInputChange = (event) => {
       setValues({
         ...values,
@@ -29,10 +33,7 @@ const IndivStudents = () => {
                 <h2>Individual Student Management</h2>
                 <label htmlFor="students">Select Student</label>
                 <select id="students" name="students">
-                    <option value="Grace">Grace</option>
-                    <option value="Alice">Alice</option>
-                    <option value="Ella">Ella</option>
-                    <option value="Liam">Liam</option>
+                    {studentList}
                 </select>
             </form>
             <div>
