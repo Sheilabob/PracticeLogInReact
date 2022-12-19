@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 const IndivStudents = ({students}) => {
+    const [selected, setSelected] = useState(students[0])
     const [values, setValues] = useState(
         { title: "", description: "", notes: "" }
     );
@@ -20,7 +21,8 @@ const IndivStudents = ({students}) => {
   
     const handleSelectStudent = (event) => {
         let selectedStudent = event.target.value
-        console.log({selectedStudent})
+        setSelected(values.student)
+        console.log(selected)
     }
     const handleSubmit = (event) => {
       event.preventDefault();
