@@ -11,6 +11,7 @@ const IndivStudents = ({students}) => {
     const studentList = students.map(
         student => <option value={student.name}>{student.name}</option>
     )
+    const assignmentTitle = selected.arrayOfAssignments[0] ? selected.arrayOfAssignments[0].title : "No Assignments"
 
     const handleInputChange = (event) => {
       setValues({
@@ -23,7 +24,7 @@ const IndivStudents = ({students}) => {
         let selectedStudent = event.target.value
         let index = students.findIndex(student => student.name === selectedStudent)
         setSelected(students[index])
-        console.log(selected)
+        console.log(selected.arrayOfAssignments[0].title)
     }
     const handleSubmit = (event) => {
       event.preventDefault();
@@ -43,7 +44,7 @@ const IndivStudents = ({students}) => {
                     {studentList}
                 </select>
             </form>
-            <div>{selected.name}</div>
+            <div>{selected.name} {assignmentTitle}</div>
             <div>
                 <form>
                     <h2>Add Assignment</h2>
