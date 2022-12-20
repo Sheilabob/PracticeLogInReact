@@ -21,7 +21,8 @@ const IndivStudents = ({students}) => {
   
     const handleSelectStudent = (event) => {
         let selectedStudent = event.target.value
-        setSelected(values.student)
+        let index = students.findIndex(student => student.name === selectedStudent)
+        setSelected(students[index])
         console.log(selected)
     }
     const handleSubmit = (event) => {
@@ -42,6 +43,7 @@ const IndivStudents = ({students}) => {
                     {studentList}
                 </select>
             </form>
+            <div>{selected.name}</div>
             <div>
                 <form>
                     <h2>Add Assignment</h2>
