@@ -11,7 +11,14 @@ const IndivStudents = ({students}) => {
     const studentList = students.map(
         student => <option value={student.name}>{student.name}</option>
     )
-    const assignmentTitle = selected.arrayOfAssignments[0] ? selected.arrayOfAssignments[0].title : "No Assignments"
+    const assignmentTitle = selected.arrayOfAssignments[0] ? selected.arrayOfAssignments[0].title : "No Assignments";
+
+    const assignmentTitle2 = selected.arrayOfAssignments[1] ? selected.arrayOfAssignments[0].title : "No Assignments";
+
+    const assignmentTitle3 = selected.arrayOfAssignments[2] ? selected.arrayOfAssignments[0].title : "No Assignments";
+
+
+    const studentAssignments = selected.arrayOfAssignments[0] ? selected.arrayOfAssignments[0] : [];
 
     const handleInputChange = (event) => {
       setValues({
@@ -30,9 +37,9 @@ const IndivStudents = ({students}) => {
       event.preventDefault();
       let newAssignment = {title: values.title, description: values.description, notes: values.notes}
       console.log("title", values.title, "description", values.description, "notes", values.notes);
-      arrayOfAssignments.push(newAssignment)
-      setArray([...arrayOfAssignments])
-      console.log({arrayOfAssignments})
+      studentAssignments.push(newAssignment)
+      setArray([...studentAssignments])
+      console.log({studentAssignments})
     };
 
     return (
@@ -44,7 +51,7 @@ const IndivStudents = ({students}) => {
                     {studentList}
                 </select>
             </form>
-            <div>{selected.name} {assignmentTitle}</div>
+            <div>{selected.name} {assignmentTitle} {assignmentTitle2} {assignmentTitle3}</div>
             <div>
                 <form>
                     <h2>Add Assignment</h2>
