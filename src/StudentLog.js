@@ -14,7 +14,7 @@ function StudentLog() {
             <h3>Ear Training</h3>
             <p>Listen to songs up through Cuckoo</p>
             <p>Notes:</p>
-            <Checkboxes checkboxID={'student-log-checks'}/>
+            <Checkboxes checkboxID={'et-log-checks'}/>
           </li>
           <li className="assignment">
             <h3>Sight Reading</h3>

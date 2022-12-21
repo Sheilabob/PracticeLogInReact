@@ -3,7 +3,8 @@ import Checkboxes from "./Checkboxes";
 function AssignmentCard() {
 
     class Assignment {
-        constructor (category, title, description, notes) {
+        constructor (id, category, title, description, notes) {
+            this.id = id;
             this.category = category;
             this.title = title;
             this.description = description;
@@ -11,7 +12,7 @@ function AssignmentCard() {
         }
     }
 
-    const demoAssignment = new Assignment("Dummy Category", "Assignment Title", "Description", "Notes")
+    const demoAssignment = new Assignment("ac1", "Dummy Category", "Assignment Title", "Description", "Notes")
 
 
     return (
@@ -20,7 +21,7 @@ function AssignmentCard() {
             <h1>{demoAssignment.title}</h1>
             <p>{demoAssignment.description}</p>
             <p>{demoAssignment.notes}</p>
-            <Checkboxes checkboxID={'assignment-card-checks'}/>
+            <Checkboxes checkboxID={`${demoAssignment.id}-assignment-card-checks`}/>
         </div>
     )
 };
