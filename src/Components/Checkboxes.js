@@ -1,5 +1,7 @@
-function Checkboxes({checkboxID}) {
+import { useState } from "react";
 
+function Checkboxes({checkboxID}) {
+    const [checkboxTotal, setCheckboxTotal] = useState(0);
 
     const handleDayCheckboxes = () => {
         let checkboxes = document.querySelectorAll(`input[name=${checkboxID}]:checked`);
@@ -7,7 +9,7 @@ function Checkboxes({checkboxID}) {
         checkboxes.forEach(() => {
             totalScore += 15;
         })
-        console.log(totalScore)
+        setCheckboxTotal(totalScore)
     }
 
     return (
@@ -26,6 +28,7 @@ function Checkboxes({checkboxID}) {
             <input type="checkbox" name={checkboxID} onChange={handleDayCheckboxes} />
             <label>Sunday</label>
             <input type="checkbox" name={checkboxID} onChange={handleDayCheckboxes} />
+            <div>Progress: {checkboxTotal}%</div>
         </div>
     )
 };
