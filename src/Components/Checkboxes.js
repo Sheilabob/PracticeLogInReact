@@ -5,9 +5,14 @@ function Checkboxes({checkboxID}) {
 
     const handleDayCheckboxes = () => {
         let checkboxes = document.querySelectorAll(`input[name=${checkboxID}]:checked`);
+        let allCheckboxes = document.querySelectorAll(`input[name=${checkboxID}]`);
         let totalScore = 0;
+        let totalCheckboxes = 0;
+        allCheckboxes.forEach(() => {
+            totalCheckboxes += 1;
+        })
         checkboxes.forEach(() => {
-            totalScore += 15;
+            totalScore += (1/totalCheckboxes);
         })
         setCheckboxTotal(totalScore)
     }
