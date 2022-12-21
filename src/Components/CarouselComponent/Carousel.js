@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import AssignmentCard from "../AssignmentCard";
 
 function Carousel() {
   let div1 = {

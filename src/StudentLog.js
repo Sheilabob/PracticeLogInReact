@@ -1,4 +1,5 @@
 import Carousel from "./Components/CarouselComponent/Carousel";
+import Checkboxes from "./Components/Checkboxes";
 
 function StudentLog() {
 
@@ -13,7 +14,7 @@ function StudentLog() {
             <h3>Ear Training</h3>
             <p>Listen to songs up through Cuckoo</p>
             <p>Notes:</p>
-            <p>Put in radio box for repetition or minutes</p>
+            <Checkboxes />
           </li>
           <li className="assignment">
             <h3>Sight Reading</h3>
