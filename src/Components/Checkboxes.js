@@ -14,7 +14,7 @@ function Checkboxes({checkboxID}) {
         checkboxes.forEach(() => {
             totalScore += (1/totalCheckboxes);
         })
-        setCheckboxTotal(totalScore)
+        setCheckboxTotal(Math.round(totalScore*100))
     }
 
     return (
