@@ -20,7 +20,7 @@ function AssignmentCard() {
             <h1>{demoAssignment.title}</h1>
             <p>{demoAssignment.description}</p>
             <p>{demoAssignment.notes}</p>
-            <Checkboxes />
+            <Checkboxes checkboxID={'assignment-card-checks'}/>
         </div>
     )
 };
