@@ -13,6 +13,9 @@ function StudentLog() {
     }
 
     const assignment1 = new Assignment("Ear Training", "Listen to songs up through Cuckoo","", "et-log-checks" )
+    const assignment2 = new Assignment("Sight Reading", "The Pony Song, p. 24","Pay attention to quarter rests.", "sr-log-checks" )
+
+    const assignmentArray = [assignment1, assignment2]
 
     return (
       <div className="studentlog card">
@@ -21,12 +24,14 @@ function StudentLog() {
         Due on Wednesday, January 10, 2023:
 
         <ul>
+        {assignmentArray.map(assignment => 
+
           <li className="assignment">
-            <h3>{assignment1.title}</h3>
-            <p>{assignment1.description}</p>
-            <p>Notes:{assignment1.notes}</p>
-            <Checkboxes checkboxID={assignment1.checkboxIdname}/>
-          </li>
+            <h3>{assignment.title}</h3>
+            <p>{assignment.description}</p>
+            <p>Notes:{assignment.notes}</p>
+            <Checkboxes checkboxID={assignment.checkboxIdname}/>
+          </li>)}
           <li className="assignment">
             <h3>Sight Reading</h3>
             <p>The Pony Song, p. 24</p>
