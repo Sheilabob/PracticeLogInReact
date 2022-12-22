@@ -3,6 +3,17 @@ import Checkboxes from "./Components/Checkboxes";
 
 function StudentLog() {
 
+    class Assignment {
+      constructor (title, description, notes, checkboxIDname) {
+        this.title = title;
+        this.description = description;
+        this.notes = notes;
+        this.checkboxIdname = checkboxIDname;
+      }
+    }
+
+    const assignment1 = new Assignment("Ear Training", "Listen to songs up through Cuckoo","", "et-log-checks" )
+
     return (
       <div className="studentlog card">
         Student Name
@@ -11,10 +22,10 @@ function StudentLog() {
 
         <ul>
           <li className="assignment">
-            <h3>Ear Training</h3>
-            <p>Listen to songs up through Cuckoo</p>
-            <p>Notes:</p>
-            <Checkboxes checkboxID={'et-log-checks'}/>
+            <h3>{assignment1.title}</h3>
+            <p>{assignment1.description}</p>
+            <p>Notes:{assignment1.notes}</p>
+            <Checkboxes checkboxID={assignment1.checkboxIdname}/>
           </li>
           <li className="assignment">
             <h3>Sight Reading</h3>
