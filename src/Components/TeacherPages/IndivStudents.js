@@ -29,15 +29,12 @@ const IndivStudents = ({students}) => {
         let selectedStudent = event.target.value
         let index = students.findIndex(student => student.name === selectedStudent)
         setSelected(students[index])
-        console.log(selected.arrayOfAssignments[0].title)
     }
     const handleSubmit = (event) => {
       event.preventDefault();
       let newAssignment = {title: values.title, description: values.description, notes: values.notes}
-      console.log("title", values.title, "description", values.description, "notes", values.notes);
-      studentAssignments.push(newAssignment)
-      setArray([...studentAssignments])
-      console.log({studentAssignments})
+      selected.arrayOfAssignments.push(newAssignment)
+      setArray([...selected.arrayOfAssignments])
     };
 
     return (
