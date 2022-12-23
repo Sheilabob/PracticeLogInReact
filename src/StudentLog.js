@@ -26,17 +26,7 @@ function StudentLog() {
 
         Due on Wednesday, January 10, 2023:
 
-        <ul>
-        {assignmentArray.map(assignment => 
-
-          <li className="assignment">
-            <h3>{assignment.title}</h3>
-            <p>{assignment.description}</p>
-            <p>Notes:{assignment.notes}</p>
-            <Checkboxes checkboxID={assignment.checkboxIdname}/>
-          </li>)}
-        </ul>
-        <Carousel />
+        <Carousel data={assignmentArray}/>
       </div>
     );
   }
