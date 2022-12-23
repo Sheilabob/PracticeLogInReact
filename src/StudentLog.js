@@ -18,7 +18,7 @@ function StudentLog() {
     const assignment4 = new Assignment("Review", "Mississippi Hop Frog, Ice Cream Cone, Run Pony, Twinkle","Pick one per hand per day, rotate through all at least once a week.", "rev-log-checks" )
     const assignment5 = new Assignment("Preview", "Cuckoo","Starts on G in RH with finger 5 - play as far as you can sound out.", "prev-log-checks" )
 
-    const assignmentArray = [assignment1, assignment2, assignment3, assignment4]
+    const assignmentArray = [assignment1, assignment2, assignment3, assignment4, assignment5]
 
     return (
       <div className="studentlog card">
