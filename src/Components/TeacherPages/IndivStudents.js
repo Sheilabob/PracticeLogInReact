@@ -1,6 +1,11 @@
 import { useState } from "react";
 
 const IndivStudents = ({students}) => {
+    const d = new Date();
+    const mm = d.getMonth() + 1;
+    const dd = d.getDate();
+    const yyyy = d.getFullYear();
+    const currentDate = mm + '/' + dd + '/' + yyyy
     const [selected, setSelected] = useState(students[0])
     const [values, setValues] = useState(
         { title: "", description: "", notes: "" }
@@ -13,10 +18,6 @@ const IndivStudents = ({students}) => {
     )
 
     const studentAssignments = selected.arrayOfAssignments[0] ? selected.arrayOfAssignments[0] : [];
-
-    const assignmentTitles = selected.arrayOfAssignments.map(assignment => assignment.title)
-
-    console.log('titles', assignmentTitles)
 
     const handleInputChange = (event) => {
       setValues({
@@ -32,7 +33,7 @@ const IndivStudents = ({students}) => {
     }
     const handleSubmit = (event) => {
       event.preventDefault();
-      let newAssignment = {title: values.title, description: values.description, notes: values.notes}
+      let newAssignment = {title: values.title, description: values.description, notes: values.notes, date:currentDate}
       selected.arrayOfAssignments.push(newAssignment)
       setArray([...selected.arrayOfAssignments])
     };
@@ -46,7 +47,8 @@ const IndivStudents = ({students}) => {
                     {studentList}
                 </select>
             </form>
-            <div>{selected.name} {assignmentTitles}</div>
+            <div>{selected.name}</div>
+            {selected.arrayOfAssignments.map(assignment => <div>{assignment.title}, {assignment.date}</div>)}
             <div>
                 <form>
                     <h2>Add Assignment</h2>
