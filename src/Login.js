@@ -7,7 +7,7 @@ import ProgressBar from "./Components/ProgressBar.js";
 
 function LoginPage() {
 
-    let students = [{name:'Alice', arrayOfAssignments: [{title:"Alice's assignment", description:"Alice's assignments", notes: "Alice's notes", date: "10/3/2022"}]}, {name:'Ella', arrayOfAssignments: [{title:"Ella's assignment", description:"Ella's assignments", notes: "Ella's notes"}, {title:"Ella's assignment2", description:"Ella's assignments2", notes: "Ella's notes2"}, {title:"Ella's assignment3", description:"Ella's assignments3", notes: "Ella's notes3"}]}, {name:'Liam', arrayOfAssignments: []}, {name:'Zinn', arrayOfAssignments: []}]
+    let students = [{name:'Alice', day:'Tue', time:'3:30pm', grade:'1st', level:'1A', arrayOfAssignments: [{title:"Alice's assignment", description:"Alice's assignments", notes: "Alice's notes", date: "10/3/2022"}]}, {name:'Ella', day:'Tue', time:'4:00pm', grade:'6th', level:'1B', arrayOfAssignments: [{title:"Ella's assignment", description:"Ella's assignments", notes: "Ella's notes"}, {title:"Ella's assignment2", description:"Ella's assignments2", notes: "Ella's notes2"}, {title:"Ella's assignment3", description:"Ella's assignments3", notes: "Ella's notes3"}]}, {name:'Liam', day:'Tue', time:'4:30pm', grade:'KG', level:'1A', arrayOfAssignments: []}, {name:'Zinn', day:'Tue', time:'5:00pm', grade:'KG', level:'1B', arrayOfAssignments: []}]
   let logSheet;
   const [values, setValues] = useState({ name: "" });
   const [pages, setPages] = useState(false);
