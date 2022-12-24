@@ -2,7 +2,6 @@ import { useState } from "react";
 
 function Checkboxes({checkboxID}) {
     const [checkboxTotal, setCheckboxTotal] = useState(0);
-    const [checked, setChecked] = useState(false);
 
     const handleDayCheckboxes = () => {
         let checkboxes = document.querySelectorAll(`input[name=${checkboxID}]:checked`);
@@ -21,7 +20,7 @@ function Checkboxes({checkboxID}) {
     return (
         <div className="card assignment-card">
             <label>Monday</label>
-            <input type="checkbox" name={checkboxID} onChange={e => {handleDayCheckboxes(); setChecked(e.target.checked)}} checked={checked}/>
+            <input type="checkbox" name={checkboxID} onChange={handleDayCheckboxes}/>
             <label>Tuesday</label>
             <input type="checkbox" name={checkboxID} onChange={handleDayCheckboxes} />
             <label>Wednesday</label>
