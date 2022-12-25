@@ -24,14 +24,11 @@ function LoginPage() {
     event.preventDefault();
 
     setPages(!pages);
-    console.log({ pages });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     setPages(!pages);
-    console.log("login", values.name);
-    console.log("pages", pages);
   };
 
   if (values.name === "student" && pages) {

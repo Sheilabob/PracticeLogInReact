@@ -1,8 +1,20 @@
-import React from "react";
+import { React, useState } from "react";
 
 const FirstTab = ({students}) => {
+    const reports = ["choose", "schedule", "roster"];
 
-    const studentList =<><h2>Student List</h2> {students.map(
+    const [report, setReport] = useState(reports[0]);
+
+    const handleSelectReport = (event) => {
+        let selectedReport = event.target.value;
+        let index = reports.findIndex(report => report === selectedReport);
+        setReport(reports[index]);
+    }
+
+    const studentList =<>      <label htmlFor="reports">Select Report</label>
+    <select id="reports" name="reports" onChange={handleSelectReport}>
+      {reports.map(report => <option value={report}>{report}</option>)}
+      </select><h2>Student List</h2> {students.map(
         student => <><h3>{student.name}</h3>  
                     <p>{student.day}, {student.time}</p>
                     <p>Grade: {student.grade}, Level: {student.level}</p>
@@ -15,15 +27,25 @@ const FirstTab = ({students}) => {
     const sortedDayTimeList = students.sort((a, b) => {
         return (map[a.day] > map[b.day]) ? 1: (map[a.day] === map[b.day]) ? ((a.time > b.time) ? 1 : -1): -1;
      });
-     const schedule = <><h2>Schedule</h2> {sortedDayTimeList.map( entry => <><p>{entry.day}, {entry.time} - {entry.name}</p></>)}</>
-
+     const schedule = <>      <label htmlFor="reports">Select Report</label>
+     <select id="reports" name="reports" onChange={handleSelectReport}>
+       {reports.map(report => <option value={report}>{report}</option>)}
+       </select><h2>Schedule</h2> {sortedDayTimeList.map( entry => <><p>{entry.day}, {entry.time} - {entry.name}</p></>)}</>
+    const unSelected = <>      <label htmlFor="reports">Select Report</label>
+    <select id="reports" name="reports" onChange={handleSelectReport}>
+      {reports.map(report => <option value={report}>{report}</option>)}
+      </select></>
      console.log("sorted by day", sortedDayTimeList)
+
+     const display = report === 'roster' ?
+        studentList : report === 'schedule' ? schedule: unSelected;
 
   return (
     <div className="FirstTab">
-      <p>Full Roster Reports</p>
-      {studentList}
-      {schedule}
+      <h2>Full Roster Reports</h2>
+
+
+      {display}
     </div>
   );
 };
