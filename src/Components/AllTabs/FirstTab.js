@@ -28,8 +28,6 @@ const FirstTab = ({students}) => {
         'am': 1, 'pm': 2
     }
 
-    console.log("LOOOK", students[0].time.slice(-2))
-
     const sortedDayTimeList = students.sort((a, b) => {
         return (map[a.day] > map[b.day]) ? 1: (map[a.day] === map[b.day]) ? ((ampm[a.time.slice(-2)] > ampm[b.time.slice(-2)]) ? 1: ((ampm[a.time.slice(-2)] === ampm[b.time.slice(-2)])) ? ((a.time > b.time) ? 1 : -1): -1): -1;
      });
