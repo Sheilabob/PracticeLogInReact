@@ -14,12 +14,23 @@ const FirstTab = ({students}) => {
     const studentList =<>      <label htmlFor="reports">Select Report</label>
     <select id="reports" name="reports" onChange={handleSelectReport}>
       {reports.map(report => <option value={report}>{report}</option>)}
-      </select><h2>Student List</h2> {students.map(
-        student => <div className="fullReport"><h3>{student.name}</h3>  
-                    <p>{student.day}, {student.time}</p>
-                    <p>Grade: {student.grade}, Level: {student.level}</p>
-                    </div>
-    )}</>
+      </select><h2>Student List</h2>
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Lesson Day, Time</th>
+                            <th>Grade</th>
+                            <th>Level</th>
+                        </tr>
+                        {students.map(student =>  
+                        <tr>
+                            <td>{student.name}</td>
+                            <td>{student.day}, {student.time}</td>
+                            <td>{student.grade}</td> 
+                            <td>{student.level}</td>
+                        </tr>)}
+                    </table>
+    </>
     const map = {
         'Mon': 1,'Tue': 2,'Wed': 3,'Thur': 4,'Fri': 5,'Sat': 6,
         'Sun': 7
