@@ -204,3 +204,18 @@ ul.nav li:hover {
 .fullReport {
   padding: 12px;
 }
+
+table {
+  width: 90%;
+  border-spacing: 0px;
+}
+
+td, th {
+  border: 1px solid #464433;
+  text-align: left;
+  padding: 4px 8px 4px 4px;
+}
+
+tr:nth-child(even) {
+  background-color: #c4aa85;
+}
