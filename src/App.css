@@ -135,8 +135,11 @@ ul.nav li:hover {
   color:#d0bfaa;
 }
 
+.FirstTab p {
+  font-size: 14px;
+  text-align: left;
+}
 
-.FirstTab p,
 .SecondTab p {
   font-size: 14px;
   text-align: center;
@@ -196,4 +199,8 @@ ul.nav li:hover {
   height: 24px;
   background-color: #c4aa85;
   width: var(--width-progress-bar);
+}
+
+.fullReport {
+  padding: 12px;
 }

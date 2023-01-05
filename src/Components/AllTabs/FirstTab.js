@@ -15,10 +15,10 @@ const FirstTab = ({students}) => {
     <select id="reports" name="reports" onChange={handleSelectReport}>
       {reports.map(report => <option value={report}>{report}</option>)}
       </select><h2>Student List</h2> {students.map(
-        student => <><h3>{student.name}</h3>  
+        student => <div className="fullReport"><h3>{student.name}</h3>  
                     <p>{student.day}, {student.time}</p>
                     <p>Grade: {student.grade}, Level: {student.level}</p>
-                    </>
+                    </div>
     )}</>
     const map = {
         'Mon': 1,'Tue': 2,'Wed': 3,'Thur': 4,'Fri': 5,'Sat': 6,
@@ -31,10 +31,13 @@ const FirstTab = ({students}) => {
     const sortedDayTimeList = students.sort((a, b) => {
         return (map[a.day] > map[b.day]) ? 1: (map[a.day] === map[b.day]) ? ((ampm[a.time.slice(-2)] > ampm[b.time.slice(-2)]) ? 1: ((ampm[a.time.slice(-2)] === ampm[b.time.slice(-2)])) ? ((a.time > b.time) ? 1 : -1): -1): -1;
      });
-     const schedule = <>      <label htmlFor="reports">Select Report</label>
-     <select id="reports" name="reports" onChange={handleSelectReport}>
-       {reports.map(report => <option value={report}>{report}</option>)}
-       </select><h2>Schedule</h2> {sortedDayTimeList.map( entry => <><p>{entry.day}, {entry.time} - {entry.name}</p></>)}</>
+     const schedule = <div className="fullReport">      
+        <label htmlFor="reports">Select Report</label>
+            <select id="reports" name="reports" onChange={handleSelectReport}>
+                {reports.map(report => <option value={report}>{report}</option>)}
+            </select><h2>Schedule</h2> 
+                {sortedDayTimeList.map(entry => <p>{entry.day}, {entry.time} - {entry.name}</p>)}
+                </div>
     const unSelected = <>      <label htmlFor="reports">Select Report</label>
     <select id="reports" name="reports" onChange={handleSelectReport}>
       {reports.map(report => <option value={report}>{report}</option>)}
@@ -46,10 +49,8 @@ const FirstTab = ({students}) => {
 
   return (
     <div className="FirstTab">
-      <h2>Full Roster Reports</h2>
-
-
-      {display}
+        <h2>Full Roster Reports</h2>
+            {display}
     </div>
   );
 };
