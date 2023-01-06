@@ -14,7 +14,7 @@ const IndivStudents = ({students}) => {
     const [arrayOfAssignments, setArray] = useState([])
   
     const studentList = students.map(
-        student => <option value={student.name}>{student.name}</option>
+        student => <option value={student.firstName}>{student.firstName}</option>
     )
 
     const studentAssignments = selected.arrayOfAssignments[0] ? selected.arrayOfAssignments[0] : [];
@@ -22,13 +22,13 @@ const IndivStudents = ({students}) => {
     const handleInputChange = (event) => {
       setValues({
         ...values,
-        [event.target.name]: event.target.value
+        [event.target.firstName]: event.target.value
       });
     };
   
     const handleSelectStudent = (event) => {
         let selectedStudent = event.target.value
-        let index = students.findIndex(student => student.name === selectedStudent)
+        let index = students.findIndex(student => student.firstName === selectedStudent)
         setSelected(students[index])
     }
     const handleSubmit = (event) => {
@@ -47,7 +47,7 @@ const IndivStudents = ({students}) => {
                     {studentList}
                 </select>
             </form>
-            <div>{selected.name}</div>
+            <div>{selected.firstName}</div>
             {selected.arrayOfAssignments.map(assignment => <div>{assignment.title}, {assignment.date}</div>)}
             <div>
                 <form>
