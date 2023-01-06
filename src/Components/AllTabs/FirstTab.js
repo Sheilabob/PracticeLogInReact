@@ -18,6 +18,7 @@ const FirstTab = ({students}) => {
                     <table>
                         <tr>
                             <th>First Name</th>
+                            <th>Last Name</th>
                             <th>Lesson Day, Time</th>
                             <th>Grade</th>
                             <th>Level</th>
@@ -25,6 +26,7 @@ const FirstTab = ({students}) => {
                         {students.map(student =>  
                         <tr>
                             <td>{student.firstName}</td>
+                            <td>{student.lastName}</td>
                             <td>{student.day}, {student.time}</td>
                             <td>{student.grade}</td> 
                             <td>{student.level}</td>
@@ -47,7 +49,7 @@ const FirstTab = ({students}) => {
             <select id="reports" name="reports" onChange={handleSelectReport}>
                 {reports.map(report => <option value={report}>{report}</option>)}
             </select><h2>Schedule</h2> 
-                {sortedDayTimeList.map(entry => <p>{entry.day}, {entry.time} - {entry.firstName}</p>)}
+                {sortedDayTimeList.map(entry => <p>{entry.day}, {entry.time} - {entry.firstName} {entry.lastName}</p>)}
                 </div>
     const unSelected = <>      <label htmlFor="reports">Select Report</label>
     <select id="reports" name="reports" onChange={handleSelectReport}>
