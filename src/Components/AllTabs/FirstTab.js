@@ -23,6 +23,16 @@ const FirstTab = ({students}) => {
         setStudentArray([...sortedByLevel])
      }
 
+     const sortedByGrade = [...students];
+
+     sortedByGrade.sort((a, b) => {
+        return (a.grade > b.grade) ? 1: -1;
+     })
+
+     const handleGradeSort = () => {
+        setStudentArray([...sortedByGrade])
+     }
+
     const studentList =<>      <label htmlFor="reports">Select Report</label>
     <select id="reports" name="reports" onChange={handleSelectReport}>
       {reports.map(report => <option value={report}>{report}</option>)}
@@ -33,7 +43,7 @@ const FirstTab = ({students}) => {
                             <th>First Name</th>
                             <th>Last Name</th>
                             <th>Lesson Day, Time</th>
-                            <th>Grade</th>
+                            <th onClick={handleGradeSort}>Grade</th>
                             <th onClick={handleLevelSort}>Level</th>
                         </tr>
                         </thead>
