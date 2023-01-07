@@ -42,6 +42,22 @@ const FirstTab = ({students}) => {
         setStudentArray([...sortedDayTimeList])
     }
 
+    const sortedByLastName = [...students];
+    sortedByLastName.sort((a, b) => {
+       return (a.lastName > b.lastName) ? 1: -1;
+   })
+   const handleLastNameSort = () => {
+       setStudentArray([...sortedByLastName])
+   }
+
+   const sortedByFirstName = [...students];
+   sortedByFirstName.sort((a, b) => {
+      return (a.firstName > b.firstName) ? 1: -1;
+  })
+  const handleFirstNameSort = () => {
+      setStudentArray([...sortedByFirstName])
+  }
+
 
     const studentList =
         <>      
@@ -53,8 +69,8 @@ const FirstTab = ({students}) => {
             <table>
                 <thead>
                     <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
+                        <th onClick={handleFirstNameSort}>First Name</th>
+                        <th onClick={handleLastNameSort}>Last Name</th>
                         <th onClick={handleDaySort}>Lesson Day, Time</th>
                         <th onClick={handleGradeSort}>Grade</th>
                         <th onClick={handleLevelSort}>Level</th>
