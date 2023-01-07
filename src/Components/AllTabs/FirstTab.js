@@ -1,7 +1,9 @@
 import { React, useState } from "react";
 
 const FirstTab = ({students}) => {
+    const [studentArray, setStudentArray] = useState([...students])
     const reports = ["choose", "schedule", "roster"];
+
 
     const [report, setReport] = useState(reports[0]);
 
@@ -11,19 +13,32 @@ const FirstTab = ({students}) => {
         setReport(reports[index]);
     }
 
+    const sortedByLevel = [...students]
+        
+    sortedByLevel.sort((a, b) => {
+        return (a.level > b.level) ? 1: -1;
+     });
+
+     const handleLevelSort = () => {
+        setStudentArray([...sortedByLevel])
+     }
+
     const studentList =<>      <label htmlFor="reports">Select Report</label>
     <select id="reports" name="reports" onChange={handleSelectReport}>
       {reports.map(report => <option value={report}>{report}</option>)}
       </select><h2>Student List</h2>
                     <table>
+                        <thead>
                         <tr>
                             <th>First Name</th>
                             <th>Last Name</th>
                             <th>Lesson Day, Time</th>
                             <th>Grade</th>
-                            <th>Level</th>
+                            <th onClick={handleLevelSort}>Level</th>
                         </tr>
-                        {students.map(student =>  
+                        </thead>
+                        <tbody>
+                        {studentArray.map(student =>  
                         <tr>
                             <td>{student.firstName}</td>
                             <td>{student.lastName}</td>
@@ -31,6 +46,7 @@ const FirstTab = ({students}) => {
                             <td>{student.grade}</td> 
                             <td>{student.level}</td>
                         </tr>)}
+                        </tbody>
                     </table>
     </>
     const map = {
@@ -41,7 +57,9 @@ const FirstTab = ({students}) => {
         'am': 1, 'pm': 2
     }
 
-    const sortedDayTimeList = students.sort((a, b) => {
+    const sortedDayTimeList = [...students];
+    
+    sortedDayTimeList.sort((a, b) => {
         return (map[a.day] > map[b.day]) ? 1: (map[a.day] === map[b.day]) ? ((ampm[a.time.slice(-2)] > ampm[b.time.slice(-2)]) ? 1: ((ampm[a.time.slice(-2)] === ampm[b.time.slice(-2)])) ? ((a.time > b.time) ? 1 : -1): -1): -1;
      });
      const schedule = <div className="fullReport">      
