@@ -13,7 +13,7 @@ const FirstTab = ({students}) => {
 
     const sortedByLevel = [...students]
     sortedByLevel.sort((a, b) => {
-        return (a.level > b.level) ? 1: -1;
+        return (a.level > b.level) ? 1: (a.level === b.level) ? ((a.grade > b.grade) ? 1: -1): -1;
      });
     const handleLevelSort = () => {
         setStudentArray([...sortedByLevel])
@@ -21,7 +21,7 @@ const FirstTab = ({students}) => {
 
     const sortedByGrade = [...students];
      sortedByGrade.sort((a, b) => {
-        return (a.grade > b.grade) ? 1: -1;
+        return (a.grade > b.grade) ? 1: (a.grade === b.grade) ? ((a.level > b.level) ? 1 : -1): -1;
     })
     const handleGradeSort = () => {
         setStudentArray([...sortedByGrade])
