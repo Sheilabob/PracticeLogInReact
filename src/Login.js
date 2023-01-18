@@ -33,6 +33,8 @@ function LoginPage() {
     setPages(!pages);
   };
 
+  const singleStudent = students.find(student => student.userName === values.name)
+
   if (userNameArray.includes(values.name) && pages) {
     logSheet = (
       <>
@@ -41,7 +43,7 @@ function LoginPage() {
             Logout
           </button>
         </form>
-        <StudentLog />
+        <StudentLog student={singleStudent}/>
       </>
     );
   } else if (values.name === "teacher" && pages) {

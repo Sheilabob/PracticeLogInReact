@@ -1,7 +1,8 @@
 import Carousel from "./Components/CarouselComponent/Carousel";
 import Checkboxes from "./Components/Checkboxes";
 
-function StudentLog() {
+function StudentLog({student}) {
+  console.log('looky looky', student)
 
     class Assignment {
       constructor (title, description, notes, checkboxIDname) {
