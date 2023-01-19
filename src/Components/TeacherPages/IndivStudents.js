@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Accordion from "../../Accordion";
 
 const IndivStudents = ({students}) => {
     const d = new Date();
@@ -38,6 +39,12 @@ const IndivStudents = ({students}) => {
       setArray([...selected.arrayOfAssignments])
     };
 
+    const accordionData = [
+        {title: 'Personal Info Card', content: ''},
+        {title: 'Payment Info', content: ''},
+        {title: 'Assignments', content: ''}
+    ]
+
     return (
         <div>
             <form>
@@ -47,9 +54,14 @@ const IndivStudents = ({students}) => {
                     {studentList}
                 </select>
             </form>
-            <div>{selected.firstName}</div>
+            <div>{selected.firstName} {selected.lastName}</div>
             {selected.arrayOfAssignments.map(assignment => <div>{assignment.title}, {assignment.date}</div>)}
             <div>
+            <div className="accordion">
+        {accordionData.map(({ title, content }) => (
+          <Accordion title={title} content={content} />
+        ))}
+      </div>
                 <form>
                     <h2>Add Assignment</h2>
                     <label htmlFor="title">Title</label>
