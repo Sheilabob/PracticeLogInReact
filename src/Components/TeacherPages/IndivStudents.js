@@ -39,13 +39,15 @@ const IndivStudents = ({students}) => {
       setArray([...selected.arrayOfAssignments])
     };
 
-    const studentPaymentHist = selected.paymentHistory.map(payment => <div>Date: {payment.date} Amount: {payment.amount} Method: {payment.method}</div>)
+    const studentPaymentHist = selected.paymentHistory ? selected.paymentHistory.map(payment => <div>Date: {payment.date} Amount: {payment.amount} Method: {payment.method}</div>): ''
+
+    const studentAssignmentList = selected.arrayOfAssignments ? selected.arrayOfAssignments.map(assignment => <div>{assignment.title}, {assignment.date}</div>): ''
 
     const accordionData = [
         {title: 'Personal Info Card', 
         ...(selected.personalInfo ? {content: `Phone: ${selected.personalInfo.phone}, Email: ${selected.personalInfo.email}, Address: ${selected.personalInfo.address}, Parent Names: ${selected.personalInfo.parentNames}, Start Date: ${selected.personalInfo.startDate}`}: {content: ''}  )},
         {title: 'Payment Info', ...(selected.paymentHistory ? {content: studentPaymentHist}: {content: ''}  )},
-        {title: 'Assignments', content: ''}
+        {title: 'Assignments', content: studentAssignmentList}
     ]
 
     console.log({selected})
@@ -60,7 +62,7 @@ const IndivStudents = ({students}) => {
                 </select>
             </form>
             <div>{selected.firstName} {selected.lastName}</div>
-            {selected.arrayOfAssignments.map(assignment => <div>{assignment.title}, {assignment.date}</div>)}
+            
             <div>
             <div className="accordion">
         {accordionData.map(({ title, content }) => (
