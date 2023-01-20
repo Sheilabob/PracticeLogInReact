@@ -40,7 +40,8 @@ const IndivStudents = ({students}) => {
     };
 
     const accordionData = [
-        {title: 'Personal Info Card', content: `Phone: ${selected.personalInfo.phone}, Email: ${selected.personalInfo.email}, Address: ${selected.personalInfo.address}, Parent Names: ${selected.personalInfo.parentNames}, Start Date: ${selected.personalInfo.startDate}`},
+        {title: 'Personal Info Card', 
+        ...(selected.personalInfo ? {content: `Phone: ${selected.personalInfo.phone}, Email: ${selected.personalInfo.email}, Address: ${selected.personalInfo.address}, Parent Names: ${selected.personalInfo.parentNames}, Start Date: ${selected.personalInfo.startDate}`}: {content: ''}  )},
         {title: 'Payment Info', content: ''},
         {title: 'Assignments', content: ''}
     ]
