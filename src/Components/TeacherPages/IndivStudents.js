@@ -39,10 +39,12 @@ const IndivStudents = ({students}) => {
       setArray([...selected.arrayOfAssignments])
     };
 
+    const studentPaymentHist = selected.paymentHistory.map(payment => <div>Date: {payment.date} Amount: {payment.amount} Method: {payment.method}</div>)
+
     const accordionData = [
         {title: 'Personal Info Card', 
         ...(selected.personalInfo ? {content: `Phone: ${selected.personalInfo.phone}, Email: ${selected.personalInfo.email}, Address: ${selected.personalInfo.address}, Parent Names: ${selected.personalInfo.parentNames}, Start Date: ${selected.personalInfo.startDate}`}: {content: ''}  )},
-        {title: 'Payment Info', content: ''},
+        {title: 'Payment Info', ...(selected.paymentHistory ? {content: studentPaymentHist}: {content: ''}  )},
         {title: 'Assignments', content: ''}
     ]
 
