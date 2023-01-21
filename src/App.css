@@ -245,3 +245,11 @@ tr:nth-child(even) {
 .accordion-content {
   background-color: #c4aa85;
 }
+
+.schedule-container {
+  display: flex;
+}
+
+.schedule-column {
+  
+}

@@ -94,10 +94,14 @@ const FirstTab = ({students}) => {
             <select id="reports" name="reports" onChange={handleSelectReport}>
                 {reports.map(report => <option value={report}>{report}</option>)}
             </select><h2>Schedule</h2> 
-                {sortedDayTimeList.filter(entry => entry.day === 'Mon').map(entry => <p>{entry.day}, {entry.time} - {entry.firstName} {entry.lastName}</p>)}
-                {sortedDayTimeList.filter(entry => entry.day === 'Tue').map(entry => <p>{entry.day}, {entry.time} - {entry.firstName} {entry.lastName}</p>)}
-                {sortedDayTimeList.filter(entry => entry.day === 'Wed').map(entry => <p>{entry.day}, {entry.time} - {entry.firstName} {entry.lastName}</p>)}
-                {sortedDayTimeList.filter(entry => entry.day === 'Thur').map(entry => <p>{entry.day}, {entry.time} - {entry.firstName} {entry.lastName}</p>)}{sortedDayTimeList.filter(entry => entry.day === 'Fri').map(entry => <p>{entry.day}, {entry.time} - {entry.firstName} {entry.lastName}</p>)}{sortedDayTimeList.filter(entry => entry.day === 'Sat').map(entry => <p>{entry.day}, {entry.time} - {entry.firstName} {entry.lastName}</p>)}
+            <div class="schedule-container">
+                <div class="schedule-column"> {sortedDayTimeList.filter(entry => entry.day === 'Mon').map(entry => <p>{entry.day}, {entry.time} - {entry.firstName} {entry.lastName}</p>)}</div>
+                <div class="schedule-column"> {sortedDayTimeList.filter(entry => entry.day === 'Tue').map(entry => <p>{entry.day}, {entry.time} - {entry.firstName} {entry.lastName}</p>)}</div>
+                <div class="schedule-column"> {sortedDayTimeList.filter(entry => entry.day === 'Wed').map(entry => <p>{entry.day}, {entry.time} - {entry.firstName} {entry.lastName}</p>)}</div>
+                <div class="schedule-column"> {sortedDayTimeList.filter(entry => entry.day === 'Thur').map(entry => <p>{entry.day}, {entry.time} - {entry.firstName} {entry.lastName}</p>)}</div>
+                <div class="schedule-column"> {sortedDayTimeList.filter(entry => entry.day === 'Fri').map(entry => <p>{entry.day}, {entry.time} - {entry.firstName} {entry.lastName}</p>)}</div>
+                <div class="schedule-column"> {sortedDayTimeList.filter(entry => entry.day === 'Sat').map(entry => <p>{entry.day}, {entry.time} - {entry.firstName} {entry.lastName}</p>)}</div>
+                </div>
                 </div>
     const unSelected = <>      <label htmlFor="reports">Select Report</label>
     <select id="reports" name="reports" onChange={handleSelectReport}>
