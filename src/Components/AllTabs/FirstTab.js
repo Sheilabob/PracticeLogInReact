@@ -95,12 +95,25 @@ const FirstTab = ({students}) => {
                 {reports.map(report => <option value={report}>{report}</option>)}
             </select><h2>Schedule</h2> 
             <div class="schedule-container">
-                <div class="schedule-column"> {sortedDayTimeList.filter(entry => entry.day === 'Mon').map(entry => <p>{entry.day}, {entry.time} - {entry.firstName} {entry.lastName}</p>)}</div>
-                <div class="schedule-column"> {sortedDayTimeList.filter(entry => entry.day === 'Tue').map(entry => <p>{entry.day}, {entry.time} - {entry.firstName} {entry.lastName}</p>)}</div>
-                <div class="schedule-column"> {sortedDayTimeList.filter(entry => entry.day === 'Wed').map(entry => <p>{entry.day}, {entry.time} - {entry.firstName} {entry.lastName}</p>)}</div>
-                <div class="schedule-column"> {sortedDayTimeList.filter(entry => entry.day === 'Thur').map(entry => <p>{entry.day}, {entry.time} - {entry.firstName} {entry.lastName}</p>)}</div>
-                <div class="schedule-column"> {sortedDayTimeList.filter(entry => entry.day === 'Fri').map(entry => <p>{entry.day}, {entry.time} - {entry.firstName} {entry.lastName}</p>)}</div>
-                <div class="schedule-column"> {sortedDayTimeList.filter(entry => entry.day === 'Sat').map(entry => <p>{entry.day}, {entry.time} - {entry.firstName} {entry.lastName}</p>)}</div>
+                <div class="schedule-column"> 
+                 {(sortedDayTimeList.findIndex(entry => entry.day === 'Mon') !== -1) && <h2>Monday</h2>}       
+                {sortedDayTimeList.filter(entry => entry.day === 'Mon').map(entry => <p>{entry.time}: {entry.firstName} {entry.lastName}</p>)}
+                </div>
+                <div class="schedule-column"> 
+                {(sortedDayTimeList.findIndex(entry => entry.day === 'Tue') !== -1) && <h2>Tuesday</h2>} 
+                {sortedDayTimeList.filter(entry => entry.day === 'Tue').map(entry => <p>{entry.time}: {entry.firstName} {entry.lastName}</p>)}</div>
+                <div class="schedule-column"> 
+                {(sortedDayTimeList.findIndex(entry => entry.day === 'Wed') !== -1) && <h2>Wednesday</h2>} 
+                {sortedDayTimeList.filter(entry => entry.day === 'Wed').map(entry => <p>{entry.time}: {entry.firstName} {entry.lastName}</p>)}</div>
+                <div class="schedule-column"> 
+                {(sortedDayTimeList.findIndex(entry => entry.day === 'Thur') !== -1) && <h2>Thursday</h2>} 
+                {sortedDayTimeList.filter(entry => entry.day === 'Thur').map(entry => <p>{entry.time}: {entry.firstName} {entry.lastName}</p>)}</div>
+                <div class="schedule-column"> 
+                {(sortedDayTimeList.findIndex(entry => entry.day === 'Fri') !== -1) && <h2>Friday</h2>} 
+                {sortedDayTimeList.filter(entry => entry.day === 'Fri').map(entry => <p>{entry.time}: {entry.firstName} {entry.lastName}</p>)}</div>
+                <div class="schedule-column"> 
+                {(sortedDayTimeList.findIndex(entry => entry.day === 'Sat') !== -1) && <h2>Saturday</h2>} 
+                {sortedDayTimeList.filter(entry => entry.day === 'Sat').map(entry => <p>{entry.time}: {entry.firstName} {entry.lastName}</p>)}</div>
                 </div>
                 </div>
     const unSelected = <>      <label htmlFor="reports">Select Report</label>

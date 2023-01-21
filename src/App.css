@@ -251,5 +251,5 @@ tr:nth-child(even) {
 }
 
 .schedule-column {
-  
+  margin: 0 10px;
 }
